@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * 2Star Staffing brand theme — colors from https://www.2star.in/
+   * Primary navy #102A54 · Accent blue #004EAA · Soft bg #F6FAFF
+   */
+  :root {
+    --background: 213 100% 98%;
+    --foreground: 217 68% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 68% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 68% 20%;
+
+    /* Primary - Navy */
+    --primary: 217 68% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft blue wash */
+    --secondary: 211 57% 93%;
+    --secondary-foreground: 217 68% 20%;
+
+    /* Muted */
+    --muted: 212 100% 97%;
+    --muted-foreground: 215 17% 34%;
+
+    /* Accent - Brand blue */
+    --accent: 222 100% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 3 78% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 45% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --boost: 219 80% 53%;
+    --boost-foreground: 0 0% 100%;
+
+    --border: 211 57% 93%;
+    --input: 211 57% 90%;
+    --ring: 222 100% 33%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 217 68% 20%;
+    --sidebar-primary: 217 68% 20%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 211 57% 93%;
+    --sidebar-accent-foreground: 217 68% 20%;
+    --sidebar-border: 211 57% 93%;
+    --sidebar-ring: 222 100% 33%;
+
+    /* Brand aliases */
+    --brand-green: 217 68% 20%;
+    --brand-teal: 222 100% 33%;
+    --brand-blue: 219 80% 53%;
+
+    --brand-gradient: linear-gradient(
+      135deg,
+      hsl(217 68% 20%),
+      hsl(222 100% 33%),
+      hsl(219 80% 53%)
+    );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .btn-solid-gradient {
+    background: hsl(var(--primary));
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--brand-teal)) 100%
+    );
+  }
+
+  .btn-solid-gradient:hover {
+    filter: brightness(1.05);
+  }
+
+  .icon-solid-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--brand-teal) / 0.15) 0%,
+      hsl(var(--brand-blue) / 0.12) 100%
+    );
+  }
+}
